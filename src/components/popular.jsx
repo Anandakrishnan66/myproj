@@ -6,12 +6,12 @@ function Popular() {
   const [popular,setPopular]=useState([]);
   useEffect(()=>{
        getPopular();
-  },[]);
+  },[])
 
   
   const getPopular=async() =>{
 
-    const check=localStorage.getItem('popular');
+    const check=localStorage.getItem("popular");
     if(check){
       setPopular(JSON.parse(check));
     }
@@ -27,7 +27,7 @@ localStorage.setItem('popular',JSON.stringify(data.recipes));
     
     
     
-  }
+  };
   return (
       
     
@@ -66,8 +66,8 @@ localStorage.setItem('popular',JSON.stringify(data.recipes));
       
     </div>
   )
+          
           }
-
 
 const Wrapper =styled.div`
 margin:4 rem 0rem;
@@ -110,4 +110,5 @@ background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));
 
 
 `;
+
 export default Popular
